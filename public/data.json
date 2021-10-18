@@ -1,0 +1,22 @@
+{
+    "name": "GYM-HOUSE",
+    "logoFooter": "https://i.ibb.co/YQKjXf4/Gym-logo-footer.png",
+    "heroSlider": [
+        {
+            "title": "first Slider",
+            "desc": "lorem this is fist slider desc",
+            "img": "https://i.ibb.co/2j1qy88/slider-1.png"
+        },
+        {
+            "title": "first Slider",
+            "desc": "lorem this is fist slider desc",
+            "img": "https://i.ibb.co/M57R91y/slider-2.png"
+        },
+        {
+            "title": "first Slider",
+            "desc": "lorem this is fist slider desc",
+            "img": "https://i.ibb.co/ZTC6JBV/slider-3.png"
+        }
+    ]
+}
+
