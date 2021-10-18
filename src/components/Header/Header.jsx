@@ -1,11 +1,12 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 
 const Header = () => {
-const {user} = useAuth()
+const {user,logOut} = useAuth()
+console.log(user);
     return (
         <div>
             <Navbar variant="dark" fixed="top" bg="dark" expand="lg">
@@ -20,9 +21,11 @@ const {user} = useAuth()
 
                             <Nav.Link as={NavLink} to="/about">About us</Nav.Link>
 
-                            <Nav.Link as={NavLink} to="/login">Login</Nav.Link>
+                            {user.email?(<Nav.Link as={NavLink} to="/login" onClick={logOut}>logout</Nav.Link>):(<Nav.Link as={NavLink} to="/login">Login</Nav.Link>)}
 
-                            {user?.email && <Nav.Link as={NavLink} to="/register">Register</Nav.Link>}
+                             {user.email?(<Nav.Link as={NavLink} to="/register"> {user?.photoURL?(<Image src={user.photoURL} style={{width:'30px'}} roundedCircle />):(<div className="bg-primary p-1" style={{borderRadius:'50px'}}>{user.displayName.slice(0,2)}</div>)} </Nav.Link>): <Nav.Link as={NavLink} to="/register">Register</Nav.Link>}
+                             
+
 
                         </Nav>
                     </Navbar.Collapse>

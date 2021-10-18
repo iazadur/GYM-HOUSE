@@ -1,17 +1,23 @@
 import React from 'react';
-import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import { Form, Button, Container, Row, Col, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import useAuth from '../../Hooks/useAuth';
 
 const Register = () => {
-    const { signInUsingGoogle, signInUsingGithub, signInUsingFacebook, handleName, handlePassword, handleEmail, handleRegistration } = useAuth()
+    const { signInUsingGoogle, signInUsingGithub, signInUsingFacebook, handleName, handlePassword, handleEmail, handleRegistration,error } = useAuth()
     return (
         <>
             <Header></Header>
-            <br /><br /><br /><br />
+            <br /><br /><br />
+            
+
+            <br />
             <div>
                 <Container>
+                {error && <Alert variant={"danger"}>
+                    {error}!
+                </Alert>}
                     <Row className="d-flex justify-content-center">
                         <Col xs={12} md={8} className="d-flex justify-content-center">
                             <Form onSubmit={handleRegistration} className="border p-4 bg-white shadow-lg w-400 rounded-3">

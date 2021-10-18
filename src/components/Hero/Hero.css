@@ -1,11 +1,21 @@
 
-    .car {
-        height: 100vh;
-        /* right: 15%;
-        bottom: 19.25rem !important;
-        left: 15%;
-        padding-top: 1.25rem;
-        padding-bottom: 1.25rem;
-        color: #fff;
-        text-align: center; */
-    }
+.carousel-caption {
+  
+    bottom: 30% !important;
+    
+}
+.carousel-caption h3{
+    font-size: 50px !important;
+    font-family: 'Oswald', sans-serif;
+    
+}
+.carousel-caption p{
+    font-size: 17.5px !important;
+    font-weight: 300 !important;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    
+}
+.caro{
+    opacity: 80%;
+}

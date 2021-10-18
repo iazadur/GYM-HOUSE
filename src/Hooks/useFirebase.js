@@ -72,13 +72,19 @@ const useFirebase = () => {
     createNewUser(email, password)
   }
 
-  
-  const processLogin = (email, password) => {
+  const handleLogin = e=>{
+    e.preventDefault()
+    processLogin( email, password)
+
+  }
+
+  const processLogin = ( email, password) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         const user = result.user
         console.log('Login User', user)
         setError('')
+        
       })
       .catch(error => {
         setError(error.message)
@@ -144,7 +150,7 @@ const useFirebase = () => {
     handleRegistration,
     handleResetPassword,
     verifyEmail,
-    processLogin,
+    handleLogin,
     logOut
 
   }

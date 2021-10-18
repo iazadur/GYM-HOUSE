@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Carousel } from 'react-bootstrap';
+import { Carousel, Container } from 'react-bootstrap';
 import useData from '../../Hooks/useData';
 import './Hero.css'
 
@@ -10,7 +10,7 @@ const Hero = () => {
     console.log(heroSlider);
     return (
 
-        <>
+        <Container>
             <Carousel >
 
                 {
@@ -18,13 +18,13 @@ const Hero = () => {
 
                         <Carousel.Item>
                             <img
-                                className="d-block car w-100"
+                                className="d-block car w-100 caro"
                                 src={s.img}
                                 alt="First slide"
                             />
                             <div className="">
                             <Carousel.Caption>
-                                <h3>{s.title}</h3>
+                                <h3 className="fs-1 lh-lg">{s.title}</h3>
                                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                             </Carousel.Caption>
                             </div>
@@ -35,7 +35,7 @@ const Hero = () => {
 
 
             </Carousel>
-        </>
+        </Container>
 
     );
 };

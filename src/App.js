@@ -11,6 +11,7 @@ import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Services from './pages/Services/Services';
 import AuthProvider from './Context/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -26,9 +27,9 @@ function App() {
         <Route exact path='/service'>
           <Services></Services>
         </Route>
-        <Route exact path='/about'>
+        <PrivateRoute exact path='/about'>
           <About></About>
-        </Route>
+        </PrivateRoute>
         <Route exact path='/about'>
           <Contact></Contact>
         </Route>
