@@ -9,6 +9,7 @@
     👉 User Can Login , Register, Forgotten Password and verify email.
     👉 You Have no account && not Login then You are not eligible access to the private route.
     👉 Redirect url after successfully login 
+    👉 You Can find best gym club when you are visite our website
 
 
 
@@ -22,3 +23,5 @@
     👉 Context Api
     👉 FireBase Authentication
     👉 Private Routing
+    👉 React Rating
+
