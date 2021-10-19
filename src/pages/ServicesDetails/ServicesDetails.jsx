@@ -27,7 +27,7 @@ const ServicesDetails = () => {
                         <h1>${s?.price} For One Month</h1>
                         <span className="">{s?.desc}</span>
                         <div className="d-flex my-2 fw-bold">
-                            <Link to={`/cart/${s?.id}`} className="rounded-pill text-white text-decoration-none px-4 py-2 cartHover">Add To Cart</Link>
+                            <Link to={`/cart/${s?.id}`} className="rounded-pill text-white text-decoration-none px-4 py-2 cartHover">Enroll Now</Link>
                         </div>
                     </Col>
                 </Row>

@@ -48,11 +48,11 @@ const Footer = () => {
                                             <button type="submit" className="w-100 btn text-muted btnhover fs-6 fw-bold bg-gradient mb-3">Subscribe us</button></Col>
                                     </Row>
                                     <div className="d-flex justify-content-around fs-3">
-                                        <i class="fab fa-facebook fs-2 text-light rounded-circle p-3 bg-dark bg-gradient "></i>
-                                        <i class="fab fa-twitter fs-2 text-light rounded-circle p-3 bg-dark bg-gradient "></i>
-                                        <i class="fab fa-instagram fs-2 text-light rounded-circle p-3 bg-dark bg-gradient "></i>
-                                        <i class="fab fa-linkedin fs-2 text-light rounded-circle p-3 bg-dark bg-gradient "></i>
-                                        <i class="fab fa-github fs-2 text-light rounded-circle p-3 bg-dark bg-gradient "></i>
+                                        <i className="fab fa-facebook fs-2 text-light rounded-circle p-3 bg-dark bg-gradient "></i>
+                                        <i className="fab fa-twitter fs-2 text-light rounded-circle p-3 bg-dark bg-gradient "></i>
+                                        <i className="fab fa-instagram fs-2 text-light rounded-circle p-3 bg-dark bg-gradient "></i>
+                                        <i className="fab fa-linkedin fs-2 text-light rounded-circle p-3 bg-dark bg-gradient "></i>
+                                        <i className="fab fa-github fs-2 text-light rounded-circle p-3 bg-dark bg-gradient "></i>
                                     </div>
                                 </div>
                             </div>

@@ -1,15 +1,34 @@
 import React from 'react';
 import { Form, Button, Container, Col, Row, Alert } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import ResetPasswordModal from '../../components/ResetPasswordModal/ResetPasswordModal';
 import useAuth from '../../Hooks/useAuth';
 import './Login.css'
+import loginImg from './../../asserts/Press_play.png'
+import Footer from '../../components/Footer/Footer';
+
 
 const Login = () => {
     const [modalShow, setModalShow] = React.useState(false);
-    const { signInUsingGoogle, signInUsingGithub, signInUsingFacebook, handleLogin, error,handleEmail,handlePassword } = useAuth()
-    
+    const { signInUsingGoogle, signInUsingGithub, signInUsingFacebook, handleLogin, error, handleEmail, handlePassword, setIsLoading, setUser, setError } = useAuth()
+    const location = useLocation()
+    const history = useHistory()
+    const redirect_uri = location.state?.from || '/home'
+
+    const handleGoogle = () => {
+        signInUsingGoogle()
+            .then((result) => {
+                console.log(result.user);
+                setUser(result.user)
+                history.push(redirect_uri)
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+            .finally(() => setIsLoading(false))
+    }
+
     return (
         <>
             <Header></Header>
@@ -22,13 +41,15 @@ const Login = () => {
 
                 <br />
                 <Row>
-                    <Col xs={12} md={6}></Col>
-                    <Col xs={12} md={6} className="d-flex justify-content-center">
-                        
+                    <Col xs={12} lg={6}>
+                        <img src={loginImg} className="img-fluid d-sm-none d-lg-block" alt="" />
+                    </Col>
+                    <Col xs={12} lg={6} className="d-flex justify-content-center">
+
                         <Form onSubmit={handleLogin} className="border p-4 bg-white shadow-lg w-400 rounded-3">
                             <Col>
                                 <Button
-                                    onClick={signInUsingGoogle} variant="white" className="w-100 shadow-lg border p-2">
+                                    onClick={handleGoogle} variant="white" className="w-100 shadow-lg border p-2">
                                     <i className="fab fa-google me-2 text-primary"></i>Sign up with Google</Button>
                             </Col>
                             <br />
@@ -70,12 +91,14 @@ const Login = () => {
                     </Col>
                 </Row>
 
+                <br /><br /><br />
 
             </Container>
             <ResetPasswordModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
+            <Footer></Footer>
         </>
     );
 };

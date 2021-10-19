@@ -35,8 +35,8 @@ const Service = () => {
                                 </div>
                                 <div className="overlay">
                                     <div className="d-flex justify-content-between bg-white ">
-                                        <Link to={`/cart/${s.id}`} className="btn btn-light btnMore d-flex "> Add to Cart</Link>
-                                        <Link to={`/service/${s.id}`} className="btn btnMore btn-light">More Details<i class="fas ms-2 fa-arrow-right"></i></Link>
+                                        <Link to={`/cart/${s.id}`} className="btn btn-light btnMore d-flex ">Enroll Now</Link>
+                                        <Link to={`/service/${s.id}`} className="btn btnMore btn-light">More Details<i className="fas ms-2 fa-arrow-right"></i></Link>
                                     </div>
                                 </div>
                             </div>

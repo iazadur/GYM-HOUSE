@@ -17,32 +17,41 @@ const useFirebase = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
+  const [isLoading, setIsLoading] = useState(true)
 
 
 
   const signInUsingGoogle = () => {
-    signInWithPopup(auth, googleProvider)
-      .then((result) => {
-        console.log(result.user);
-        setUser(result.user)
-      })
+    setIsLoading(true)
+    return signInWithPopup(auth, googleProvider)
   }
 
-
+  // Github 
   const signInUsingGithub = () => {
+    setIsLoading(true)
     signInWithPopup(auth, githubProvider)
       .then((result) => {
         console.log(result.user);
         setUser(result.user)
       })
+      .catch(error => {
+        setError(error.message)
+      })
+      .finally(() => setIsLoading(false))
   }
 
+  // facebook 
   const signInUsingFacebook = () => {
+    setIsLoading(true)
     signInWithPopup(auth, facebookProvider)
       .then((result) => {
         console.log(result.user);
         setUser(result.user)
       })
+      .catch(error => {
+        setError(error.message)
+      })
+      .finally(() => setIsLoading(false))
   }
 
   const handleEmail = e => {
@@ -72,23 +81,25 @@ const useFirebase = () => {
     createNewUser(email, password)
   }
 
-  const handleLogin = e=>{
+  const handleLogin = e => {
     e.preventDefault()
-    processLogin( email, password)
+    processLogin(email, password)
 
   }
 
-  const processLogin = ( email, password) => {
+  const processLogin = (email, password) => {
+    setIsLoading(true)
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         const user = result.user
         console.log('Login User', user)
         setError('')
-        
+
       })
       .catch(error => {
         setError(error.message)
       })
+      .finally(() => setIsLoading(false))
   }
   const createNewUser = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password)
@@ -112,18 +123,24 @@ const useFirebase = () => {
   }
 
   const logOut = () => {
+    setIsLoading(true)
     signOut(auth)
       .then(() => {
         setUser({})
       })
+      .finally(() => setIsLoading(false))
   }
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribed = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user)
+      } else {
+        setUser({})
       }
+      setIsLoading(false)
     })
+    return () => unsubscribed
   }, [])
 
   const verifyEmail = () => {
@@ -151,7 +168,11 @@ const useFirebase = () => {
     handleResetPassword,
     verifyEmail,
     handleLogin,
-    logOut
+    logOut,
+    setIsLoading,
+    isLoading,
+    setError,
+    setUser
 
   }
 }

@@ -6,7 +6,6 @@ import useAuth from '../../Hooks/useAuth';
 
 const Header = () => {
 const {user,logOut} = useAuth()
-console.log(user);
     return (
         <>
             <Navbar variant="dark" fixed="top" bg="dark" expand="lg">

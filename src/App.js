@@ -13,6 +13,7 @@ import Services from './pages/Services/Services';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import ServicesDetails from './pages/ServicesDetails/ServicesDetails';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -28,9 +29,9 @@ function App() {
         <Route exact path='/service'>
           <Services></Services>
         </Route>
-        <Route exact path='/service/:id'>
+        <PrivateRoute exact path='/service/:id'>
           <ServicesDetails></ServicesDetails>
-        </Route>
+        </PrivateRoute>
         <PrivateRoute exact path='/about'>
           <About></About>
         </PrivateRoute>
@@ -42,6 +43,9 @@ function App() {
         </Route>
         <Route exact path='/register'>
           <Register></Register>
+        </Route>
+        <Route path='*'>
+          <NotFound></NotFound>
         </Route>
       </Switch>
     </Router>
