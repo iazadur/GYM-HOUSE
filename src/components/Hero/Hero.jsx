@@ -10,23 +10,23 @@ const Hero = () => {
     console.log(heroSlider);
     return (
 
-        <Container>
+        <Container className="my-4 pt-4">
             <Carousel >
 
                 {
-                    heroSlider?.map(s => (
+                    heroSlider?.map((s, i) => (
 
-                        <Carousel.Item>
+                        <Carousel.Item key={i}>
                             <img
                                 className="d-block car w-100 caro"
                                 src={s.img}
                                 alt="First slide"
                             />
                             <div className="">
-                            <Carousel.Caption>
-                                <h3 className="fs-1 lh-lg">{s.title}</h3>
-                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                            </Carousel.Caption>
+                                <Carousel.Caption>
+                                    <h3 className="fs-1 lh-lg">{s.title}</h3>
+                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                </Carousel.Caption>
                             </div>
                         </Carousel.Item>
 

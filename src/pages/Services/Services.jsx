@@ -1,10 +1,13 @@
 import React from 'react';
+import Header from '../../components/Header/Header';
+import Service from '../../components/Service/Service';
 
 const Services = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+          <Header></Header>
+          <Service></Service> 
+        </>
     );
 };
 

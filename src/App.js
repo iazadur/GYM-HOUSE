@@ -12,6 +12,7 @@ import Contact from './pages/Contact/Contact';
 import Services from './pages/Services/Services';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import ServicesDetails from './pages/ServicesDetails/ServicesDetails';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route exact path='/service'>
           <Services></Services>
+        </Route>
+        <Route exact path='/service/:id'>
+          <ServicesDetails></ServicesDetails>
         </Route>
         <PrivateRoute exact path='/about'>
           <About></About>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Image, Nav, Navbar } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 
@@ -8,10 +8,10 @@ const Header = () => {
 const {user,logOut} = useAuth()
 console.log(user);
     return (
-        <div>
+        <>
             <Navbar variant="dark" fixed="top" bg="dark" expand="lg">
-                <Container>
-                    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                <Container className="">
+                    <Navbar.Brand as={Link} to="/">GYM-HOUSE</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
@@ -49,7 +49,7 @@ console.log(user);
 
 
 
-        </div >
+        </>
     );
 };
 

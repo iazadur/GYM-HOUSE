@@ -1,0 +1,14 @@
+.b{
+  width: 100px;
+  padding: 2px;
+  background-color: black;  
+}
+.cartHover{
+    background-color: #5dc2ca;
+    color: white;
+}
+.cartHover:hover{
+    background-color:white; 
+    color: #5dc2ca !important;
+    border: 2px solid #5dc2ca;
+}

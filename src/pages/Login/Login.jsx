@@ -24,6 +24,7 @@ const Login = () => {
                 <Row>
                     <Col xs={12} md={6}></Col>
                     <Col xs={12} md={6} className="d-flex justify-content-center">
+                        
                         <Form onSubmit={handleLogin} className="border p-4 bg-white shadow-lg w-400 rounded-3">
                             <Col>
                                 <Button

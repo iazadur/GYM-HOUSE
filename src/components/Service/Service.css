@@ -1,0 +1,25 @@
+
+.overlay{
+  display: none;
+}
+.hello:hover .overlay{
+display: block;
+}
+.icon{
+  width: 20px;
+}
+.btnMore:hover{
+ background-color: #DD246E !important; 
+ height: 100%;
+ color: whitesmoke !important;
+ font-weight: 500;
+}
+.fw-300{
+  font-weight: 300;
+}
+.fw-400{
+  font-weight: 400;
+}
+.fw-500{
+  font-weight: 500;
+}

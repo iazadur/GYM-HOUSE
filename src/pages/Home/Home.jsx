@@ -1,6 +1,8 @@
 import React from 'react';
+import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import Hero from '../../components/Hero/Hero';
+import Service from '../../components/Service/Service';
 
 
 const Home = () => {
@@ -8,6 +10,8 @@ const Home = () => {
         <div>
             <Header></Header>
             <Hero></Hero>
+            <Service></Service>
+            <Footer></Footer>
         </div>
     );
 };
