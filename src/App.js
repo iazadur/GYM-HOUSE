@@ -14,6 +14,8 @@ import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import ServicesDetails from './pages/ServicesDetails/ServicesDetails';
 import NotFound from './pages/NotFound/NotFound';
+import ShoppingDetails from './pages/ShoppingDetails/ShoppingDetails';
+import Shopping from './pages/Shopping/Shopping';
 
 function App() {
   return (
@@ -29,8 +31,14 @@ function App() {
         <Route exact path='/service'>
           <Services></Services>
         </Route>
+        <Route exact path='/shopping'>
+          <Shopping></Shopping>
+        </Route>
         <PrivateRoute exact path='/service/:id'>
           <ServicesDetails></ServicesDetails>
+        </PrivateRoute>
+        <PrivateRoute exact path='/shopping/:id'>
+          <ShoppingDetails></ShoppingDetails>
         </PrivateRoute>
         <PrivateRoute exact path='/about'>
           <About></About>

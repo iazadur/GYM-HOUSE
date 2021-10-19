@@ -1,23 +1,26 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import Rating from 'react-rating';
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
 import { Link } from 'react-router-dom';
 import useData from '../../Hooks/useData';
 
-const Shop = () => {
+const Shopping = () => {
     const { product } = useData()
 
     console.log(product);
     return (
         <>
-            <Container>
+        <Header></Header>
+            <Container className="my-5 pt-5">
                 <div className="my-5">
                     <h1 className="text-center">Our Products</h1>
                     <div className="b mx-auto"></div>
                 </div>
                 <Row xs={1} md={2} className="g-4 mb-5">
-                    {product?.slice(0,4).map((p, idx) => (
-                        <Col as={Link} to={`/shopping/${p.id}`} key={idx} className="text-decoration-none text-dark">
+                    {product?.map((p, idx) => (
+                        <Col as={Link} to={`/product/${p.id}`} key={idx} className="text-decoration-none text-dark">
                             <Card className="border-0 shadow-lg rounded-3">
                                 <Card.Img variant="top" src={p.img} />
                                 <Card.Body>
@@ -44,8 +47,9 @@ const Shop = () => {
                     ))}
                 </Row>
             </Container>
+        <Footer></Footer>
         </>
     );
 };
 
-export default Shop;
+export default Shopping;

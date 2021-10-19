@@ -5,15 +5,13 @@ import './Hero.css'
 
 const Hero = () => {
     const { heroSlider } = useData()
-    
+
     return (
         <>
             <Container className="my-4 pt-4">
                 <Carousel >
-
                     {
                         heroSlider?.map((s, i) => (
-
                             <Carousel.Item key={i}>
                                 <img
                                     className="d-block car w-100 caro"
@@ -27,11 +25,8 @@ const Hero = () => {
                                     </Carousel.Caption>
                                 </div>
                             </Carousel.Item>
-
                         ))
                     }
-
-
                 </Carousel>
             </Container>
         </>
