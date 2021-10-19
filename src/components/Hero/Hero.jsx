@@ -16,7 +16,7 @@ const Hero = () => {
                             <div className="bannerTextDiv">
                                 <div className="text-white fw-bolder">
                                     <h1 className="fs-100">{hero?.title}</h1>
-                                    <h4 className="fs-2 text-muted">{hero?.desc}</h4>
+                                    <h4 className="fs-2 text-muted my-4">{hero?.desc}</h4>
                                     <button className="btn fs-3 bg-success bg-gradient fw-bold rounded-3 shadow-lg border-0 px-5 py-3 text-light">Know More<i className="fas ms-2 fa-arrow-right"></i></button>
                                 </div>
                             </div>

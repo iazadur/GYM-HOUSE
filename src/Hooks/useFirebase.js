@@ -29,29 +29,13 @@ const useFirebase = () => {
   // Github 
   const signInUsingGithub = () => {
     setIsLoading(true)
-    signInWithPopup(auth, githubProvider)
-      .then((result) => {
-        console.log(result.user);
-        setUser(result.user)
-      })
-      .catch(error => {
-        setError(error.message)
-      })
-      .finally(() => setIsLoading(false))
+    return signInWithPopup(auth, githubProvider)
   }
 
   // facebook 
   const signInUsingFacebook = () => {
     setIsLoading(true)
-    signInWithPopup(auth, facebookProvider)
-      .then((result) => {
-        console.log(result.user);
-        setUser(result.user)
-      })
-      .catch(error => {
-        setError(error.message)
-      })
-      .finally(() => setIsLoading(false))
+    return signInWithPopup(auth, facebookProvider)
   }
 
   const handleEmail = e => {
@@ -62,6 +46,7 @@ const useFirebase = () => {
   }
   const handlePassword = e => {
     setPassword(e.target.value)
+    console.log(e.target.value);
   }
 
   const handleRegistration = e => {
@@ -81,34 +66,25 @@ const useFirebase = () => {
     createNewUser(email, password)
   }
 
-  const handleLogin = e => {
-    e.preventDefault()
-    processLogin(email, password)
+  const handleLogin =() => {
+    return processLogin(email, password)
 
   }
 
   const processLogin = (email, password) => {
     setIsLoading(true)
-    signInWithEmailAndPassword(auth, email, password)
-      .then((result) => {
-        const user = result.user
-        console.log('Login User', user)
-        setError('')
-
-      })
-      .catch(error => {
-        setError(error.message)
-      })
-      .finally(() => setIsLoading(false))
+    return signInWithEmailAndPassword(auth, email, password)
+      
   }
   const createNewUser = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         const user = result.user
-        console.log(user)
+        setUser(user)
         setError('')
         verifyEmail()
         setUserName()
+        window.location.assign('/')
       })
       .catch(error => {
         setError(error.message)
@@ -132,7 +108,7 @@ const useFirebase = () => {
   }
 
   useEffect(() => {
-    const unsubscribed = onAuthStateChanged(auth, (user) => {
+    onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user)
       } else {
@@ -140,7 +116,7 @@ const useFirebase = () => {
       }
       setIsLoading(false)
     })
-    return () => unsubscribed
+    
   }, [])
 
   const verifyEmail = () => {

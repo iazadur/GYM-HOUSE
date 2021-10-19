@@ -19,7 +19,6 @@ const Login = () => {
     const handleGoogle = () => {
         signInUsingGoogle()
             .then((result) => {
-                console.log(result.user);
                 setUser(result.user)
                 history.push(redirect_uri)
             })
@@ -27,6 +26,43 @@ const Login = () => {
                 setError(error.message)
             })
             .finally(() => setIsLoading(false))
+    }
+
+    const handleGb = () => {
+        signInUsingGithub()
+        .then((result) => {
+            setUser(result.user)
+            history.push(redirect_uri)
+          })
+          .catch(error => {
+            setError(error.message)
+          })
+          .finally(() => setIsLoading(false))
+    }
+    const handleFb = () => {
+        signInUsingFacebook()
+        .then((result) => {
+            setUser(result.user)
+            history.push(redirect_uri)
+          })
+          .catch(error => {
+            setError(error.message)
+          })
+          .finally(() => setIsLoading(false))
+    }
+    const handleEml = (e) => {
+        e.preventDefault()
+        handleLogin()
+        .then((result) => {
+            const user = result.user
+            setUser(user)
+            setError('')
+            history.push(redirect_uri)
+          })
+          .catch(error => {
+            setError(error.message)
+          })
+          .finally(() => setIsLoading(false))
     }
 
     return (
@@ -46,7 +82,7 @@ const Login = () => {
                     </Col>
                     <Col xs={12} lg={6} className="d-flex justify-content-center">
 
-                        <Form onSubmit={handleLogin} className="border p-4 bg-white shadow-lg w-400 rounded-3">
+                        <Form onSubmit={handleEml} className="border p-4 bg-white shadow-lg w-400 rounded-3">
                             <Col>
                                 <Button
                                     onClick={handleGoogle} variant="white" className="w-100 shadow-lg border p-2">
@@ -55,12 +91,12 @@ const Login = () => {
                             <br />
                             <Col>
                                 <Button
-                                    onClick={signInUsingGithub} variant="dark" className="w-100 shadow-lg p-2">
+                                    onClick={handleGb} variant="dark" className="w-100 shadow-lg p-2">
                                     <i className="fab fa-github me-2"></i>Sign up With Github</Button>
                             </Col>
                             <br />
                             <Col>
-                                <Button onClick={signInUsingFacebook} variant="primary" className="w-100 shadow-lg p-2">
+                                <Button onClick={handleFb} variant="primary" className="w-100 shadow-lg p-2">
                                     <i className="fab fa-facebook me-2"></i>SignIn With Facebook</Button>
                             </Col>
                             <hr />
