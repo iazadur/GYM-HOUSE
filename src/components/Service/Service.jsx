@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 
 const Service = () => {
     const { service } = useData()
-    console.log(service);
     return (
         <Container className="my-5">
             <div className="py-3">

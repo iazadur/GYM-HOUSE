@@ -20,7 +20,7 @@ const Shopping = () => {
                 </div>
                 <Row xs={1} md={2} className="g-4 mb-5">
                     {product?.map((p, idx) => (
-                        <Col as={Link} to={`/product/${p.id}`} key={idx} className="text-decoration-none text-dark">
+                        <Col as={Link} to={`/shopping/${p.id}`} key={idx} className="text-decoration-none text-dark">
                             <Card className="border-0 shadow-lg rounded-3">
                                 <Card.Img variant="top" src={p.img} />
                                 <Card.Body>

@@ -8,7 +8,7 @@ const Header = () => {
 const {user,logOut} = useAuth()
     return (
         <>
-            <Navbar variant="dark" fixed="top" bg="dark" expand="lg">
+            <Navbar variant="dark" fixed="top" className="bg-gradient" bg="dark" expand="lg">
                 <Container className="">
                     <Navbar.Brand as={Link} to="/">GYM-HOUSE</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -21,6 +21,7 @@ const {user,logOut} = useAuth()
                             <Nav.Link as={NavLink} to="/shopping">Shop</Nav.Link>
 
                             {user.email?(<Nav.Link as={NavLink} to="/login" onClick={logOut}>logout</Nav.Link>):(<Nav.Link as={NavLink} to="/login">Login</Nav.Link>)}
+                            {user.email?(<Nav.Link as={NavLink} to="/">{user.displayName}</Nav.Link>):null}
 
                              {user.email?(<Nav.Link as={NavLink} to="/register"> {user?.photoURL?(<Image src={user.photoURL} style={{width:'30px'}} roundedCircle />):(<div className="bg-primary p-1" style={{borderRadius:'50px'}}>{user.displayName.slice(0,2)}</div>)} </Nav.Link>): <Nav.Link as={NavLink} to="/register">Register</Nav.Link>}
                              

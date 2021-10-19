@@ -1,21 +1,13 @@
-
-.carousel-caption {
-  
-    bottom: 30% !important;
-    
+.banner{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
 }
-.carousel-caption h3{
-    font-size: 50px !important;
-    font-family: 'Oswald', sans-serif;
-    
+.banner .bannerTextDiv{
+    display: flex;
+    align-items: center;
+    height: 100vh !important;
 }
-.carousel-caption p{
-    font-size: 17.5px !important;
-    font-weight: 300 !important;
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 1px;
-    
-}
-.caro{
-    opacity: 80%;
+.fs-100{
+    font-size: 5rem;
 }

@@ -6,8 +6,6 @@ import useData from '../../Hooks/useData';
 
 const Shop = () => {
     const { product } = useData()
-
-    console.log(product);
     return (
         <>
             <Container>
