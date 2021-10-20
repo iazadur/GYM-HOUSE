@@ -7,7 +7,6 @@ import {
 import Home from './pages/Home/Home';
 import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
-import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Services from './pages/Services/Services';
 import AuthProvider from './Context/AuthProvider';
