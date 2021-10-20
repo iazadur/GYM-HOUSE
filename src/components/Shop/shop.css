@@ -1,0 +1,13 @@
+.productHover{
+    transition: box-shadow 0.5s linear ;
+}
+.productHover:hover{
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}
+
+.cardimg{
+    transition: transform 1.5s !important;
+}
+.cardimg:hover{
+    transform: scale(1.25) !important;
+  }

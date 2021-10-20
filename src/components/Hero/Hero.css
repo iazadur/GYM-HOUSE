@@ -11,3 +11,11 @@
 .fs-100{
     font-size: 5rem;
 }
+
+.herobtn{
+    transition: color 1s linear, background-color .5s linear !important;
+}
+.herobtn:hover{
+color: #1F8958 !important;
+background-color: whitesmoke !important;
+}

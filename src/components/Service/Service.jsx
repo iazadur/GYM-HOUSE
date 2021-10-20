@@ -3,6 +3,8 @@ import { Container } from 'react-bootstrap';
 import './Service.css'
 import useData from '../../Hooks/useData';
 import { Link } from 'react-router-dom';
+import { Fade } from 'react-reveal';
+import SectionTitle from '../SectionTitle/SectionTitle';
 
 
 
@@ -10,14 +12,12 @@ const Service = () => {
     const { service } = useData()
     return (
         <Container className="my-5">
-            <div className="py-3">
-                <h1 className="text-center">Our Services</h1>
-                <div className="b mx-auto"></div>
-            </div>
-            <div className="row row-cols-1 row-cols-md-2 g-4 mt-2">
+            <SectionTitle title={"Our Services"}></SectionTitle>
+            <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mt-2">
 
                 {
                     service?.map((s) => (
+                        <Fade bottom>
                         <div className="col hello" key={s.id}>
                             <div className="card h-100 border-0 shadow-lg rounded-3 position-relative ">
                                 <img src={s.img} className="opacity-75 h-100 card-img-top" alt="..." />
@@ -40,6 +40,7 @@ const Service = () => {
                                 </div>
                             </div>
                         </div>
+                        </Fade>
                     ))
                 }
 

@@ -3,11 +3,14 @@
   padding: 2px;
   background-color: black;  
 }
-.cartHover{
+.btnHover{
     background-color: #5dc2ca;
     color: white;
+    border: 2px solid #5dc2ca;
+    transition: background-color 1s linear, color 1s !important;
+    font-weight: 600;
 }
-.cartHover:hover{
+.btnHover:hover{
     background-color:white; 
     color: #5dc2ca !important;
     border: 2px solid #5dc2ca;

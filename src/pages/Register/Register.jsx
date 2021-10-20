@@ -1,22 +1,28 @@
 import React from 'react';
 import { Form, Button, Container, Row, Col, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import useAuth from '../../Hooks/useAuth';
 
 const Register = () => {
-    const { signInUsingGoogle, signInUsingGithub, signInUsingFacebook, handleName, handlePassword, handleEmail, handleRegistration,error } = useAuth()
+    const { signInUsingGoogle, signInUsingGithub, signInUsingFacebook, handleName, handlePassword, handleEmail, handleRegistration,error,msg } = useAuth()
     return (
         <>
             <Header></Header>
             <br /><br /><br />
-            
+            <SectionTitle title="Sign Up / Registration"></SectionTitle>
 
             <br />
             <div>
                 <Container>
                 {error && <Alert variant={"danger"}>
                     {error}!
+                </Alert>}
+                {msg && <Alert variant={"success"}>
+                    {msg}!
+                    <br />
                 </Alert>}
                     <Row className="d-flex justify-content-center">
                         <Col xs={12} md={8} className="d-flex justify-content-center">
@@ -72,6 +78,7 @@ const Register = () => {
 
                 </Container>
             </div>
+            <Footer></Footer>
         </>
     );
 };

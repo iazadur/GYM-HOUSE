@@ -18,6 +18,7 @@ const useFirebase = () => {
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const [isLoading, setIsLoading] = useState(true)
+  const [msg,setMsg] = useState()
 
 
 
@@ -55,10 +56,10 @@ const useFirebase = () => {
       return setError("Password Must be 6 charecter")
     }
     if (!/(?=(.*[a-z]){1,})/.test(password)) {
-      return setError("Password Must be 1 uppercase charecter")
+      return setError("Password Must be 1 Lowercase charecter")
     }
     if (!/(?=(.*[A-Z]){1,})/.test(password)) {
-      return setError("Password Must be 1 Lowercase charecter")
+      return setError("Password Must be 1 Uppercase charecter")
     }
     // if (!/(?=(.*[0-9]){2,}) /.test(password)) {
     //   return setError("Password Must be 2 numbers")
@@ -84,6 +85,7 @@ const useFirebase = () => {
         setError('')
         verifyEmail()
         setUserName()
+        setMsg("Registration successfully!")
         window.location.assign('/')
       })
       .catch(error => {
@@ -148,7 +150,8 @@ const useFirebase = () => {
     setIsLoading,
     isLoading,
     setError,
-    setUser
+    setUser,
+    msg
 
   }
 }

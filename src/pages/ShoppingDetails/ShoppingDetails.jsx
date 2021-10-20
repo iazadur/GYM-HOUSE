@@ -31,7 +31,7 @@ const ShoppingDetails = () => {
                         </p>
                         <p>{s?.sortDesc}</p>
 
-                        <Link className="rounded-pill text-white text-decoration-none px-5 py-3 cartHover fw-500" to={`/cart/${s?.id}`}>Add To Cart</Link>
+                        <Link className="rounded-pill text-decoration-none px-5 py-3 btnHover fw-500" to={`/cart/${s?.id}`}>Add To Cart</Link>
                         </div>
                     </Col>
                 </Row>

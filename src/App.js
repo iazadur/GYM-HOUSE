@@ -16,6 +16,7 @@ import ServicesDetails from './pages/ServicesDetails/ServicesDetails';
 import NotFound from './pages/NotFound/NotFound';
 import ShoppingDetails from './pages/ShoppingDetails/ShoppingDetails';
 import Shopping from './pages/Shopping/Shopping';
+import MemberShip from './pages/MemberShip/MemberShip';
 
 function App() {
   return (
@@ -31,19 +32,19 @@ function App() {
         <Route exact path='/service'>
           <Services></Services>
         </Route>
+        <Route exact path='/service/:id'>
+          <ServicesDetails></ServicesDetails>
+        </Route>
         <PrivateRoute exact path='/shopping'>
           <Shopping></Shopping>
         </PrivateRoute>
-        <PrivateRoute exact path='/service/:id'>
-          <ServicesDetails></ServicesDetails>
+        <PrivateRoute exact path='/membership'>
+          <MemberShip></MemberShip>
         </PrivateRoute>
         <PrivateRoute exact path='/shopping/:id'>
           <ShoppingDetails></ShoppingDetails>
         </PrivateRoute>
-        <PrivateRoute exact path='/about'>
-          <About></About>
-        </PrivateRoute>
-        <Route exact path='/about'>
+        <Route exact path='/contact'>
           <Contact></Contact>
         </Route>
         <Route exact path='/login'>

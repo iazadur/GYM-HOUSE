@@ -1,25 +1,34 @@
 
 .overlay{
-  display: none;
+  display: block;
 }
-.hello:hover .overlay{
+/* .hello:hover .overlay{
 display: block;
-}
+} */
 .icon{
   width: 20px;
 }
+
+.btnMore{
+  background-color: white !important;
+  transition: background-color 1.5s !important;
+  font-weight: 500;
+}
 .btnMore:hover{
- background-color: #DD246E !important; 
- height: 100%;
+ background-color: #DD246E !important;
+ height: 100% !important;
  color: whitesmoke !important;
  font-weight: 500;
 }
 .fw-300{
-  font-weight: 300;
+  font-weight: 300 !important;
 }
 .fw-400{
-  font-weight: 400;
+  font-weight: 400 !important;
 }
 .fw-500{
-  font-weight: 500;
+  font-weight: 500 !important;
+}
+.fw-600{
+  font-weight: 600 !important;
 }

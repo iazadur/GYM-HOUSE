@@ -7,6 +7,7 @@ import useAuth from '../../Hooks/useAuth';
 import './Login.css'
 import loginImg from './../../asserts/Press_play.png'
 import Footer from '../../components/Footer/Footer';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
 
 
 const Login = () => {
@@ -70,12 +71,15 @@ const Login = () => {
             <Header></Header>
             <Container>
                 <br /><br /><br />
+                <SectionTitle title="LogIn / SignUp"></SectionTitle>
+                <br />
 
                 {error && <Alert variant={"danger"}>
                     {error}!
                 </Alert>}
 
                 <br />
+
                 <Row>
                     <Col xs={12} lg={6}>
                         <img src={loginImg} className="img-fluid d-sm-none d-lg-block" alt="" />

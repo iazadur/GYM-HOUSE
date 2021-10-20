@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { Fade } from 'react-reveal';
 import { Link } from 'react-router-dom';
 import './Footer.css'
 
@@ -9,8 +10,8 @@ const Footer = () => {
             <div className=" bg-gradient py-5" style={{ backgroundColor: "#13243A" }}>
                 <Container>
                     <Row className="" >
-
                         <Col xs={12} md={4} className="bg-light bg-transparent text-white my-3">
+                    <Fade bottom>
                             <div className="">
                                 <h3 className="text-uppercase fs-3 border-bottom border-warning pb-2 ">About us</h3>
                                 <Link className="text-decoration-none border-b pb-2 fs-6 d-block text-white" to="/">Fit Club in a nutshel</Link>
@@ -19,9 +20,11 @@ const Footer = () => {
                                 <Link className="text-decoration-none border-b pb-2 fs-6 d-block text-white" to="/">Location</Link>
                                 <Link className="text-decoration-none border-b pb-2 fs-6 d-block text-white" to="/">Management Team</Link>
                             </div>
+                        </Fade>
                         </Col>
 
                         <Col xs={12} md={4} className="bg-light bg-transparent text-white my-3">
+                        <Fade bottom>
                             <div className="">
 
                                 <h3 className="text-uppercase fs-3 border-bottom border-warning pb-2 ">Gym classes</h3>
@@ -32,10 +35,12 @@ const Footer = () => {
                                 <Link className="text-decoration-none border-b pb-2 fs-6 d-block text-white" to="/">Signle class</Link>
                                 <Link className="text-decoration-none border-b pb-2 fs-6 d-block text-white" to="/">Find Out More</Link>
                             </div>
+                        </Fade>
                         </Col>
 
 
                         <Col xs={12} md={4} className="bg-light bg-transparent text-white my-3">
+                        <Fade bottom>
                             <div className="">
                                 <div className="">
                                     <h3 className="text-uppercase fs-3 border-bottom border-warning pb-2">NewsLetter</h3>
@@ -56,6 +61,7 @@ const Footer = () => {
                                     </div>
                                 </div>
                             </div>
+                        </Fade>
                         </Col>
 
 

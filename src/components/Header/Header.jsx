@@ -26,7 +26,11 @@ const {user,logOut} = useAuth()
 
                             <Nav.Link as={NavLink} to="/service">Service</Nav.Link>
 
+                            <Nav.Link as={NavLink} to="/membership">Membership</Nav.Link>
+
                             <Nav.Link as={NavLink} to="/shopping">Shop</Nav.Link>
+
+                            <Nav.Link as={NavLink} to="/contact">Contact Us</Nav.Link>
 
                             {user.email?(<Nav.Link as={NavLink} to="/login" onClick={logOut}>logout</Nav.Link>):(<Nav.Link as={NavLink} to="/login">Login</Nav.Link>)}
                             {user.email?(<Nav.Link as={NavLink} to="/">{user.displayName}</Nav.Link>):null}
