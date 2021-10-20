@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
+import MapDirection from '../../components/MapDirection/MapDirection';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import useData from '../../Hooks/useData';
 import './Contact.css'
@@ -34,6 +35,7 @@ const Contact = () => {
                 </Row>
                 <br /><br />
             </Container>
+                <MapDirection></MapDirection>
             <Footer></Footer>
         </>
     );

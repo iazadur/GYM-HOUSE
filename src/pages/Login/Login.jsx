@@ -21,6 +21,7 @@ const Login = () => {
         signInUsingGoogle()
             .then((result) => {
                 setUser(result.user)
+                setError('')
                 history.push(redirect_uri)
             })
             .catch(error => {
@@ -31,39 +32,44 @@ const Login = () => {
 
     const handleGb = () => {
         signInUsingGithub()
-        .then((result) => {
-            setUser(result.user)
-            history.push(redirect_uri)
-          })
-          .catch(error => {
-            setError(error.message)
-          })
-          .finally(() => setIsLoading(false))
+            .then((result) => {
+                setUser(result.user)
+                setError('')
+                history.push(redirect_uri)
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+            .finally(() => setIsLoading(false))
     }
     const handleFb = () => {
         signInUsingFacebook()
-        .then((result) => {
-            setUser(result.user)
-            history.push(redirect_uri)
-          })
-          .catch(error => {
-            setError(error.message)
-          })
-          .finally(() => setIsLoading(false))
+            .then((result) => {
+                setUser(result.user)
+                setError('')
+                history.push(redirect_uri)
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+            .finally(() => setIsLoading(false))
     }
     const handleEml = (e) => {
         e.preventDefault()
         handleLogin()
-        .then((result) => {
-            const user = result.user
-            setUser(user)
-            setError('')
-            history.push(redirect_uri)
-          })
-          .catch(error => {
-            setError(error.message)
-          })
-          .finally(() => setIsLoading(false))
+            .then((result) => {
+                const user = result.user
+                setUser(user)
+                setError('')
+                history.push(redirect_uri)
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+            .finally(() => {
+                
+                setIsLoading(false)
+            })
     }
 
     return (
@@ -73,7 +79,7 @@ const Login = () => {
                 <br /><br /><br />
                 <SectionTitle title="LogIn / SignUp"></SectionTitle>
                 <br />
-
+                
                 {error && <Alert variant={"danger"}>
                     {error}!
                 </Alert>}
