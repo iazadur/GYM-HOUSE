@@ -10,6 +10,7 @@
     👉 You Have no account && not Login then You are not eligible access to the private route.
     👉 Redirect url after successfully login 
     👉 You Can find best gym club when you are visite our website
+    👉 Add Mapbox gl into the Contact Page, find your direction route in our map
 
 
 
@@ -23,5 +24,7 @@
     👉 Context Api
     👉 FireBase Authentication
     👉 Private Routing
+    👉 React Rating
+    👉 React-reveal
     👉 React Rating
 

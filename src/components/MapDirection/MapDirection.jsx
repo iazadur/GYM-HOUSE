@@ -10,7 +10,7 @@ const MapDirection = () => {
         const map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
-            center: [-79.4512, 43.6568],
+            center: [89.1185934, 22.7062881],
             zoom: 13
         });
 
